@@ -50,10 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - uses: actions/checkout@v3
       - name: Deploy to production
-        uses: JorgeLNJunior/render-deploy@v1.4.4
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
-          wait_deploy: true
+          wait-for-success: true
